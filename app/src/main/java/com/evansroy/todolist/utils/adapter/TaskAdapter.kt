@@ -1,17 +1,19 @@
-package com.example.kotlintodopractice.utils.adapter
+package com.evansroy.todolist.utils.adapter
 
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.kotlintodopractice.databinding.EachTodoItemBinding
 import com.evansroy.todolist.utils.model.ToDoData
+
+
+import com.evansroy.todolist.databinding.EachTodoItemBinding
 
 class TaskAdapter(private val list: MutableList<ToDoData>) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
     private  val TAG = "TaskAdapter"
-    private var listener:TaskAdapterInterface? = null
-    fun setListener(listener:TaskAdapterInterface){
+    private var listener: TaskAdapterInterface? = null
+    fun setListener(listener: TaskAdapterInterface){
         this.listener = listener
     }
     class TaskViewHolder(val binding: EachTodoItemBinding) : RecyclerView.ViewHolder(binding.root)
