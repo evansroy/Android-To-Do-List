@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.evansroy.todolist.databinding.FragmentToDoDialogBinding
-
+import com.evansroy.todolist.utils.model.ToDoData
 import com.google.android.material.textfield.TextInputEditText
 
 // The class extends the DialogFragment class
@@ -74,3 +74,12 @@ class ToDoDialogFragment : DialogFragment() {
                     listener?.updateTask(toDoData!!, binding.todoEt)
                 }
             }
+        }
+    }
+
+    // Interface for the click listener for the Next button
+    interface OnDialogNextBtnClickListener{
+        fun saveTask(todoTask:String , todoEdit:TextInputEditText)
+        fun updateTask(toDoData: ToDoData , todoEdit:TextInputEditText)
+    }
+}
